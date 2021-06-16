@@ -12,11 +12,11 @@ const (
 	Region                                 = "r"
 	SecretName                             = "s"
 	SecretKey                              = "k"
-	GenericMalformedKeyError               = "secret format error - malformed params, expected format '[encrypted|encryptedFile]:secrets:secrets-manager!r:some-region!s:some-secret' optionally followed by a params '!k:some-params' for types of encrypted to get a specific value in a kv map"
-	EncryptedFilesShouldNotSpecifyKeyError = "encrypted files for secrets-manager should not include the !k:some-params token, and should point to a binary secret in AWS Secrets Manager"
-	RegionMissingError                     = "secret format error - 'r' for region is required"
-	SecretNameMissingError                 = "secret format error - 's' for secret name is required"
-	MalformedKVPairSecretPayload           = "malformed kv pair secret payload, expected the payload to be a params value pair map of type: map[string]string"
+	GenericMalformedKeyError               = "Secret Format Error - Malformed parameters. Expected format '[encrypted|encryptedFile]:secrets:secrets-manager!r:<some-region>!s:<some-secret>' optionally followed by the parameter '!k:<some-params>' for types of encrypted to get a specific value in a key-value map."
+	EncryptedFilesShouldNotSpecifyKeyError = "Encrypted files for AWS Secrets Manager should not include the !k:<some-params> token. Point to a binary secret in AWS Secrets Manager."
+	RegionMissingError                     = "Secret format error - 'r' for the AWS region where the secret is stored is required."
+	SecretNameMissingError                 = "Secret format error - 's' for the secret name is required."
+	MalformedKVPairSecretPayload           = "Malformed key-value pair secret payload. Expected the payload to be a parameter value pair map of type: map[string]string."
 )
 
 type AwsSecretsManagerDecrypter struct {
